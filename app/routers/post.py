@@ -2,8 +2,8 @@ from fastapi import Response, status, HTTPException, Depends, APIRouter
 from sqlalchemy.orm import Session
 from sqlalchemy import func
 from typing import List, Optional
-from app import models, schema, oath2
-from app.database import get_db, engine
+from .. import models, schema, oath2
+from ..database import get_db, engine
 
 
 models.Base.metadata.create_all(bind=engine)
@@ -13,7 +13,7 @@ router = APIRouter(
     tags = ['Posts']
 )
 
-@router.get("/", response_model=List[schema.PostResponse])
+@router.get("/", response_model=List[schema.Post])
 # @router.get("/")
 def get_posts(db: Session = Depends(get_db), user_id: int = Depends(oath2.get_current_user), limit: int = 10,
               skip: int = 0, search: Optional[str] = ""):
