@@ -3,8 +3,8 @@ Description=demo fastapi application
 After=network.target
 
 [Service]
-User=sanjeev
-Group=sanjeev
+User=ubuntu
+Group=ubuntu
 WorkingDirectory=/home/ubuntu/fastapi/src/
 Environment="PATH=/home/ubuntu/fastapi/venv/bin"
 EnvironmentFile=/home/ubuntu/.env
