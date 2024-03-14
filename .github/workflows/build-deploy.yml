@@ -50,6 +50,10 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirement.txt
       
+      - name: Create PostgreSQL Database
+        run: |
+          docker exec -it ${{ job.services.postgres.id }} psql -U postgres -c "CREATE DATABASE fastapi"
+      
       - name: Test with pytest
         run: |
           pip install pytest
