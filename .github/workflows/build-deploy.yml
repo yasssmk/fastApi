@@ -83,14 +83,14 @@ jobs:
 
     steps:
       - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@v1.0.3
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.PROD_USERNAME }}
-        password: ${{ secrets.PROD_PWD }}
-        port: ${{ secrets.PORT }}
-        script: |
-          cd fasapi/src
-          git pull
-          echo ${{ secrets.SUDO_PWD }} | sudo -S systemctl restart fastapi
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.PROD_USERNAME }}
+          password: ${{ secrets.PROD_PWD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd fasapi/src
+            git pull
+            echo ${{ secrets.SUDO_PWD }} | sudo -S systemctl restart fastapi
     
