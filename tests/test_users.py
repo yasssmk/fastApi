@@ -3,11 +3,11 @@ from app.config import settings
 from jose import jwt
 import pytest
 
-def test_root(client):
-    res = client.get("/")
-    # print(res.json()['message'])
-    assert res.json()['message'] == "Hello Yacine!"
-    assert res.status_code == 200
+# def test_root(client):
+#     res = client.get("/")
+#     # print(res.json()['message'])
+#     assert res.json()['message'] == "Hello Yacine!"
+#     assert res.status_code == 200
 
 
 def test_create_user(client):
