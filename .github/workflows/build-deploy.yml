@@ -87,6 +87,7 @@ jobs:
           prod_host: ${{ secrets.PROD_HOST }}
         run: |
           echo "Host: $prod_host"
+          echo "Host: $prod_username"
 
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v1.0.3
