@@ -90,5 +90,6 @@ jobs:
           script: |
             cd fastapi/src
             git pull
-            echo ${{ secrets.SUDO_PWD }} | sudo -S systemctl restart fast
+            echo ${{ secrets.SUDO_PWD }} | sudo -S systemctl restart fastapi
+            
     
