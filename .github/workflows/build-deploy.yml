@@ -85,7 +85,7 @@ jobs:
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.HOST }}
+          host: ${{ secrets.PROD_HOST }}
           username: ${{ secrets.PROD_USERNAME }}
           password: ${{ secrets.PROD_PWD }}
           port: ${{ secrets.PORT }}
