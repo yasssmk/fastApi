@@ -92,5 +92,5 @@ jobs:
         script: |
           cd fasapi/src
           git pull
-          sudo systemctl restart fastapi
+          echo ${{ secrets.SUDO_PWD }} | sudo -S systemctl restart fastapi
     
