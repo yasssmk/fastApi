@@ -52,7 +52,7 @@ jobs:
       
       - name: Create PostgreSQL Database
         run: |
-          docker exec -it ${{ job.services.postgres.id }} psql -U postgres -c "CREATE DATABASE fastapi"
+          docker exec ${{ job.services.postgres.id }} psql -U postgres -c "CREATE DATABASE fastapi"
       
       - name: Test with pytest
         run: |
