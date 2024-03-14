@@ -82,8 +82,11 @@ jobs:
     needs: [Build]
     steps:
       - name: Debug PROD_HOST
+        env:
+          prod_username: ${{ secrets.PROD_USERNAME }}
+          prod_host: ${{ secrets.PROD_HOST }}
         run: |
-          echo "Host: ${{ secrets.PROD_HOST }}"
+          echo "Host: $prod_host"
 
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v1.0.3
