@@ -95,4 +95,4 @@ def update_post(id: str, post: schema.PostBase, db: Session = Depends(get_db), u
     post_query.update(post.model_dump(), synchronize_session=False)
     db.commit()
 
-    return post_query.first()
+    return post_query.first
